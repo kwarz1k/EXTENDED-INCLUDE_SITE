@@ -1,0 +1,124 @@
+$size: cover;
+$repeat: no-repeat;
+@mixin Kont{
+    width: 754px;
+    height: 152px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    h1{
+        font-size: 38px;
+    }
+}
+.Four{
+    width: 100vw;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    .Centr{
+        width: 100vw;
+        height: 770px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../../assets/BABENKA.png);
+        background-size: $size;
+        background-repeat: $repeat;
+        .hennesy{
+            @include Kont;
+            .kont{
+            width: 450px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .knopka{
+                width: 215px;
+                height: 36px;
+                border: 0.3px solid white;
+                color: white;
+                 background-color: transparent;
+                 cursor: pointer;
+            }
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .Four {
+        width: 100%;
+        height: 650px;
+
+        .Centr {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+
+            .hennesy {
+                max-width: 700px;
+                width: 90%;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 900px) {
+    .Four {
+        height: auto;
+        min-height: 500px;
+
+        .Centr {
+            height: auto;
+            min-height: 500px;
+            padding: 60px 20px;
+
+            .hennesy {
+                width: 100%;
+                height: auto;
+                gap: 30px;
+
+                h1 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .Four {
+        min-height: 450px;
+
+        .Centr {
+            padding: 50px 15px;
+
+            .hennesy {
+                gap: 24px;
+
+                h1 {
+                    font-size: 24px;
+                }
+
+                .kont {
+                    width: 100%;
+                    height: auto;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    .knopka {
+                        width: 100%;
+                        max-width: 250px;
+                        height: 42px;
+                    }
+                }
+            }
+        }
+    }
+}

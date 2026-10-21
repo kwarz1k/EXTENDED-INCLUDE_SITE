@@ -1,0 +1,144 @@
+$width:945px;
+$height:515px;
+$background-repeat: no-repeat;
+$background-size: cover;
+@mixin KANT1{
+    width: $width;
+    height: $height;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-image: url(../../assets/girl.png);
+    background-repeat: $background-repeat;
+    background-size: $background-size;
+}
+.SEET{
+    width: 270px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    color: white;
+    h1{
+        font-size: 34px;
+    }
+    p{
+        font-size: 16px;
+    }
+}
+.KANT2{
+    width: $width;
+    height: $height;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-image: url(../../assets/irina.png);
+    background-repeat: $background-repeat;
+    background-size: $background-size;
+}
+.Second{
+    width: 100vw;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .Centr{
+        width: 100vw;
+        height: 515px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .kont1{
+            @include KANT1;
+            .sent{
+                @extend .SEET;
+            }
+            .konts{
+                width: 254px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: white;
+            }
+        }
+        .kont2{
+            @extend .KANT2;
+            .sent{
+                @extend .SEET;
+            }
+            .konts{
+                width: 254px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: white;
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .Second {
+        width: 100%;
+        height: auto;
+
+        .Centr {
+            width: 100%;
+            height: auto;
+
+            .kont1, .kont2 {
+                width: 50%;
+                height: 450px;
+                background-position: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .Second {
+        height: auto;
+
+        .Centr {
+            flex-direction: column;
+            gap: 20px;
+
+            .kont1, .kont2 {
+                width: 100%;
+                height: 400px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .Second {
+        .Centr {
+            gap: 15px;
+
+            .kont1, .kont2 {
+                height: 320px;
+
+                .sent {
+                    width: 90%;
+                    margin-bottom: 20px;
+
+                    h1 {
+                        font-size: 26px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+
+                    .konts {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}

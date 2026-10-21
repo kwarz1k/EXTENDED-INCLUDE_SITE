@@ -1,0 +1,94 @@
+$width:100vw;
+$height:730px;
+@mixin ZXC{
+        width: 668px;
+        height: 578px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        color: white;
+        h1{
+            font-size: 38px;
+        }
+        p{
+            font-size: 18px;
+        }
+}
+.Third{
+    width: $width;
+    height: $height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    .zxc{
+        @include ZXC;
+    }
+}
+
+@media (max-width: 1600px) {
+    .Third {
+        width: 100%;
+        height: auto;
+        padding: 60px 20px;
+
+        .zxc {
+            height: auto;
+            gap: 25px;
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 900px) {
+    .Third {
+        padding: 50px 20px;
+
+        .zxc {
+            width: 90%;
+
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            img {
+                max-width: 280px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 500px) {
+    .Third {
+        padding: 40px 15px;
+
+        .zxc {
+            width: 100%;
+            gap: 20px;
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            img {
+                max-width: 200px;
+            }
+        }
+    }
+}

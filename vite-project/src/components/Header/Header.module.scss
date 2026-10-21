@@ -1,0 +1,138 @@
+$width: 466px;
+$height: 55px;
+$primary-color: gray;
+
+$phone: 500px;  
+$tablet: 900px;      
+$laptop-max: 1600px;  
+
+@mixin konti {
+  width: $width;
+  height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    width: 400px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li a {
+      color: $primary-color;
+      text-decoration: none;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: $laptop-max) {
+    width: auto;
+    max-width: $width;
+
+    ul {
+      width: auto;
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    width: auto;
+
+    ul {
+      width: auto;
+      gap: 8px;
+
+      li a {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media (max-width: $phone) {
+    width: 100%;
+    height: auto;
+
+    ul {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      gap: 12px;
+
+      li a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+%konti {
+  @include konti;
+}
+
+header {
+  width: 100%;
+  min-height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  nav {
+    width: 90vw;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .konti1 {
+      @include konti;
+    }
+
+    .konti2 {
+      @extend %konti;
+    }
+
+
+    @media (max-width: $tablet) {
+      width: 95vw;
+      gap: 10px;
+    }
+
+
+    @media (max-width: $phone) {
+      flex-direction: column;
+      width: 90%;
+      height: auto;
+      padding: 20px 0;
+      gap: 20px;
+    }
+  }
+}
+
+.knopka {
+  width: 64px;
+  height: 23px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: $tablet) {
+    width: 58px;
+    height: 22px;
+    font-size: 12px;
+  }
+
+  @media (max-width: $phone) {
+    width: 100%;
+    max-width: 220px;
+    height: 34px;
+    font-size: 14px;
+  }
+}

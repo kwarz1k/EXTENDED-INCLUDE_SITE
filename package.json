@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "classes": "^0.3.0",
+    "react-router-dom": "^7.18.4",
+    "sass": "^1.105.2",
+    "swiper": "^14.3.0"
+  }
+}
